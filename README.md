@@ -1,5 +1,7 @@
 # Welcome to the JavaScript Carnival!
 
+## [Try Dress the Clown](https://ljsimpkin.github.io/javascript-carnival-liam/dress-the-clown/dress-the-clown.html)
+
 ## Summary
 
 Welcome to the JavaScript Carnival! It's a wonderful place full of exciting games and activities... Just kidding! All three of our games are broken. Please help us fix the carnival using your JavaScript skills.
