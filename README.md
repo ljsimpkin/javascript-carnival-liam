@@ -1,6 +1,7 @@
 # Welcome to the JavaScript Carnival!
 
 ## [Try Dress the Clown](https://ljsimpkin.github.io/javascript-carnival-liam/dress-the-clown/dress-the-clown.html)
+Use arrow keys to dress the clown
 
 ## Summary
 
