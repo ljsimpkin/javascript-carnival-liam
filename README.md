@@ -1,7 +1,14 @@
+
+
 # Welcome to the JavaScript Carnival!
 
-## [Try Dress the Clown](https://ljsimpkin.github.io/javascript-carnival-liam/dress-the-clown/dress-the-clown.html)
+## Try for yourself
+
+### [Dress the Clown](https://ljsimpkin.github.io/javascript-carnival-liam/dress-the-clown/dress-the-clown.html)
 Use arrow keys to dress the clown
+
+### [Whack the moles](https://ljsimpkin.github.io/javascript-carnival-liam/whack-a-mole/whack-a-mole.html)
+Click the moles fast!
 
 ## Summary
 
