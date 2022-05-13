@@ -10,6 +10,12 @@ Use arrow keys to dress the clown
 ### [Whack the moles](https://ljsimpkin.github.io/javascript-carnival-liam/whack-a-mole/whack-a-mole.html)
 Click the moles fast!
 
+### [Inflate the unicorn](https://ljsimpkin.github.io/javascript-carnival-liam/inflate-the-unicorn/inflate-the-unicorn.html)
+Click the unicorn!
+
+
+
+
 ## Summary
 
 Welcome to the JavaScript Carnival! It's a wonderful place full of exciting games and activities... Just kidding! All three of our games are broken. Please help us fix the carnival using your JavaScript skills.
