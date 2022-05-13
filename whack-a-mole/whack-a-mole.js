@@ -41,8 +41,13 @@ function removeMole(tableId) {
     d.removeChild(d_nested)
 }
 
+var audio = new Audio('./whack-audio.wav')
+
 function updateMoleMap(event) {
     if (isMole(event.target.id)) {
+        audio.pause()
+        audio.currentTime = 0
+        audio.play()
         removeMole(event.target.id)
         addMole(randomIntFromInterval(0, 24).toString())
     }
