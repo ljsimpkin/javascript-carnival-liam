@@ -22,6 +22,16 @@ td {
     width: 75px;
 }
 
+td:hover {
+    background-image: url("./whack-a-mole/hammer.jpeg");
+    background-size: 100% 100%;
+    background-position: absolute
+    /* height: 100%;
+    width: 100%;
+    display: block; */
+    /* background-color: rgb(78, 59, 34); */
+}
+
 .container {
     text-align: center;
 }
