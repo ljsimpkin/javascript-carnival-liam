@@ -14,25 +14,21 @@ table {
     margin-right: center;
     margin-left: center;
     margin: 0 auto;
+    cursor: url("http://www.rw-designer.com/cursor-view/116484.png"), auto;
 }
 
 td {
-    background-color: BurlyWood;
+    background-color: rgb(227, 223, 147);
     height: 75px;
     width: 75px;
+    border-radius: 12%
 }
 
 td:hover {
-    background-image: url("./whack-a-mole/hammer.jpeg");
-    background-size: 100% 100%;
-    background-position: absolute
-    /* height: 100%;
-    width: 100%;
-    display: block; */
-    /* background-color: rgb(78, 59, 34); */
+    opacity: 0.6;
 }
 
-.container {
+*/ .container {
     text-align: center;
 }
 
