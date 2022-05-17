@@ -8,6 +8,7 @@ let hitCount = 0
 var audio = new Audio('./whack-audio.wav')
 var firstClickEvent = 1
 var startTime, endTime
+var timerLength = 10
 
 document.addEventListener('DOMContentLoaded', start)
 
@@ -65,13 +66,17 @@ document.getElementById('highScore').innerHTML =
 function updateMoleMap(event) {
     if (firstClickEvent) {
         startTimer()
+        var displayTime = window.setInterval(function() {
+            document.getElementById('timer').innerHTML = 10 - endTimer()
+        }, 1000)
         firstClickEvent = 0
     }
 
-    if (endTimer() > 7) {
+    if (endTimer() > timerLength) {
+        clearInterval(displayTime)
         if (hitCount > parseInt(localStorage.getItem('HighScore'))) {
             localStorage.setItem('HighScore', hitCount)
-            alert('Congrats, new high score of ', localStorage.getItem('HighScore'))
+            alert('Congrats, new high score of ', hitCount)
         } else {
             alert(
                 '10 Seconds is up!, you clicked ' +
@@ -102,3 +107,9 @@ function randomIntFromInterval(min, max) {
     // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
+
+// var displayTime = window.setInterval(function() {
+//     document.getElementById('timer').innerHTML = endTimer()
+// }, 1000)
+
+// displayTime2

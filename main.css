@@ -1,74 +1,82 @@
-body {
-    font-family: 'Rye', cursive;
-    background-color: LightPink;
-}
-
-h1 {
-    margin-top: 100px;
-    margin-bottom: 50px;
-    font-size: 3em;
-    text-align: center;
-}
-
-table {
-    margin-right: center;
-    margin-left: center;
-    margin: 0 auto;
-    cursor: url("http://www.rw-designer.com/cursor-view/116484.png"), auto;
-}
-
-td {
-    background-color: rgb(227, 223, 147);
-    height: 75px;
-    width: 75px;
-    border-radius: 12%
-}
-
-td:hover {
-    opacity: 0.6;
-}
-
-*/ .container {
-    text-align: center;
-}
-
-.inflate-an-image {
-    display: inline-block;
-    width: 400px;
-    height: 400px;
-    margin: 5px;
-}
-
-.dress-a-parent {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    position: relative;
-    top: 0;
-    left: 0;
-}
-
-.dress-an-image {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-
-.head {
-    z-index: 2
-}
-
-.body {
-    z-index: 0
-}
-
-.shoes {
-    z-index: 1
-}
-
-#moleImg {
-    height: 100%;
-    width: 100%;
-    display: block;
-}
+    body {
+        font-family: 'Rye', cursive;
+        background-color: LightPink;
+    }
+    
+    h1 {
+        margin-top: 100px;
+        margin-bottom: 50px;
+        font-size: 3em;
+        text-align: center;
+    }
+    
+    table {
+        margin-right: center;
+        margin-left: center;
+        margin: 0 auto;
+        cursor: url("http://www.rw-designer.com/cursor-view/116484.png"), auto;
+    }
+    
+    td {
+        background-color: rgb(227, 223, 147);
+        height: 75px;
+        width: 75px;
+        border-radius: 12%
+    }
+    
+    td:hover {
+        opacity: 0.8;
+    }
+    
+    .inflate-an-image {
+        display: inline-block;
+        width: 400px;
+        height: 400px;
+        margin: 5px;
+    }
+    
+    .dress-a-parent {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    
+    .dress-an-image {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    
+    .head {
+        z-index: 2
+    }
+    
+    .body {
+        z-index: 0
+    }
+    
+    .shoes {
+        z-index: 1
+    }
+    
+    #moleImg {
+        height: 100%;
+        width: 100%;
+        display: block;
+    }
+    
+    .legend {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 22%;
+        background-color: white;
+        border: 15px solid green;
+        padding: 50px;
+        margin-top: 50px;
+        border-radius: 12%
+    }
