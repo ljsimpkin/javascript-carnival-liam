@@ -95,7 +95,7 @@ function finishGame() {
 
     document.getElementById('highScore').innerHTML =
         localStorage.getItem('HighScore')
-    document.getElementById('HITCOUNT').innerHTML = '0'
+    document.getElementById('hitCount').innerHTML = '0'
     document.getElementById('timer').innerHTML = TIMERLENGTH
 }
 
@@ -113,6 +113,6 @@ function updateMap(event) {
         removeMole(event.target.id)
         addMole(randomIntFromInterval(0, 24).toString())
         HITCOUNT += 1
-        document.getElementById('HITCOUNT').innerHTML = HITCOUNT.toString()
+        document.getElementById('hitCount').innerHTML = HITCOUNT.toString()
     }
 }
