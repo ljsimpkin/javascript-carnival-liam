@@ -81,7 +81,7 @@ function startGame() {
 function finishGame() {
     if (HITCOUNT > parseInt(localStorage.getItem('HighScore'))) {
         localStorage.setItem('HighScore', HITCOUNT)
-        alert('Congrats!! New high score of ', HITCOUNT)
+        alert('Congrats!! New high score of ' + HITCOUNT)
     } else {
         alert(
             TIMERLENGTH +
