@@ -85,7 +85,7 @@ function finishGame() {
     } else {
         alert(
             TIMERLENGTH +
-            'Seconds is up!, you clicked ' +
+            ' seconds is up!, you clicked ' +
             HITCOUNT +
             '. Close this box to start again'
         )
