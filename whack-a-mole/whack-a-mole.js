@@ -85,9 +85,9 @@ function finishGame() {
     } else {
         alert(
             TIMERLENGTH +
-            ' seconds is up!, you clicked ' +
+            ' seconds is up! You clicked ' +
             HITCOUNT +
-            '. Close this box to start again'
+            '. Close this box to start again.'
         )
     }
     FIRSTEVENTCLICK = 1
