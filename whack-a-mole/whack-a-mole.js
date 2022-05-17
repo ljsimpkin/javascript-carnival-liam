@@ -4,24 +4,31 @@
 
 console.log('Whack-a-Mole!')
 
-let hitCount = 0
 var audio = new Audio('./whack-audio.wav')
-var firstClickEvent = 1
-var startTime, endTime
-var timerLength = 10
+let HITCOUNT = 0
+var FIRSTEVENTCLICK = 1
+var STARTTIME, ENDTIME
+var TIMERLENGTH = 10
 
 document.addEventListener('DOMContentLoaded', start)
 
 function start() {
     bindEventListeners(document.getElementsByClassName('table')[0].children)
     addMole(randomIntFromInterval(0, 24).toString())
+    document.getElementById('timer').innerHTML = TIMERLENGTH
+    document.getElementById('highScore').innerHTML =
+        localStorage.getItem('HighScore')
 }
 
 function bindEventListeners(table) {
     for (var i = 0; i < table.length; i++) {
-        table[i].addEventListener('click', updateMoleMap)
-            // dots[i].addEventListener('dblclick', undoDot)
+        table[i].addEventListener('click', updateMap)
     }
+}
+
+function randomIntFromInterval(min, max) {
+    // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 function addMole(tableId) {
@@ -42,12 +49,12 @@ function removeMole(tableId) {
 }
 
 function startTimer() {
-    startTime = new Date()
+    STARTTIME = new Date()
 }
 
-function endTimer() {
-    endTime = new Date()
-    var timeDiff = endTime - startTime //in ms
+function elapsedTime() {
+    ENDTIME = new Date()
+    var timeDiff = ENDTIME - STARTTIME //in ms
         // strip the ms
     timeDiff /= 1000
 
@@ -60,36 +67,43 @@ if (!localStorage.getItem('HighScore')) {
     localStorage.setItem('HighScore', 0)
 }
 
-document.getElementById('highScore').innerHTML =
-    localStorage.getItem('HighScore')
-
-function updateMoleMap(event) {
-    if (firstClickEvent) {
-        startTimer()
-        var displayTime = window.setInterval(function() {
-            document.getElementById('timer').innerHTML = 10 - endTimer()
-        }, 1000)
-        firstClickEvent = 0
-    }
-
-    if (endTimer() > timerLength) {
-        clearInterval(displayTime)
-        if (hitCount > parseInt(localStorage.getItem('HighScore'))) {
-            localStorage.setItem('HighScore', hitCount)
-            alert('Congrats, new high score of ', hitCount)
-        } else {
-            alert(
-                '10 Seconds is up!, you clicked ' +
-                hitCount +
-                '. Click ok to start again'
-            )
+function startGame() {
+    var game = window.setInterval(function() {
+        document.getElementById('timer').innerHTML =
+            10 - elapsedTime() >= 0 ? TIMERLENGTH - elapsedTime() : 0
+        if (elapsedTime() > TIMERLENGTH) {
+            clearInterval(game)
+            finishGame()
         }
-        firstClickEvent = 1
-        hitCount = 0
+    }, 1000)
+}
 
-        document.getElementById('highScore').innerHTML =
-            localStorage.getItem('HighScore')
-        document.getElementById('hitCount').innerHTML = '0'
+function finishGame() {
+    if (HITCOUNT > parseInt(localStorage.getItem('HighScore'))) {
+        localStorage.setItem('HighScore', HITCOUNT)
+        alert('Congrats!! New high score of ', HITCOUNT)
+    } else {
+        alert(
+            TIMERLENGTH +
+            'Seconds is up!, you clicked ' +
+            HITCOUNT +
+            '. Close this box to start again'
+        )
+    }
+    FIRSTEVENTCLICK = 1
+    HITCOUNT = 0
+
+    document.getElementById('highScore').innerHTML =
+        localStorage.getItem('HighScore')
+    document.getElementById('HITCOUNT').innerHTML = '0'
+    document.getElementById('timer').innerHTML = TIMERLENGTH
+}
+
+function updateMap(event) {
+    if (FIRSTEVENTCLICK) {
+        startTimer()
+        startGame()
+        FIRSTEVENTCLICK = 0
     }
 
     if (isMole(event.target.id)) {
@@ -98,18 +112,7 @@ function updateMoleMap(event) {
         audio.play()
         removeMole(event.target.id)
         addMole(randomIntFromInterval(0, 24).toString())
-        hitCount += 1
-        document.getElementById('hitCount').innerHTML = hitCount.toString()
+        HITCOUNT += 1
+        document.getElementById('HITCOUNT').innerHTML = HITCOUNT.toString()
     }
 }
-
-function randomIntFromInterval(min, max) {
-    // min and max included
-    return Math.floor(Math.random() * (max - min + 1) + min)
-}
-
-// var displayTime = window.setInterval(function() {
-//     document.getElementById('timer').innerHTML = endTimer()
-// }, 1000)
-
-// displayTime2
