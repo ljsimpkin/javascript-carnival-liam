@@ -14,7 +14,8 @@
         margin-right: center;
         margin-left: center;
         margin: 0 auto;
-        cursor: url("http://www.rw-designer.com/cursor-view/116484.png"), auto;
+        /* cursor: url("http://www.rw-designer.com/cursor-view/116484.png"), auto; */
+        cursor: url("./whack-a-mole/hammer.png"), auto;
     }
     
     td {
